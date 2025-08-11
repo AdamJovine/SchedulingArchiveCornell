@@ -1,10 +1,10 @@
 ## Overview
-This repository contains datasets accompanying the paper "Cornell University Uses Integer Programming to Optimize Final Exam Scheduling".
+This repository contains datasets accompanying the paper "Cornell University Uses Integer Programming to Optimize Final Exam Scheduling" ([arXiv:2409.04959](https://arxiv.org/abs/2409.04959)).
 
 Use these data to reproduce or benchmark exam timetabling models, compare objective trade-offs (conflicts, back-to-backs, 2-in-3s, etc.), and analyze solution quality.
 
 ## Repository structure
-- `cornell/`: anonymized inputs for Spring 2024 at Cornell University
+- `cornell/`: anonymized inputs for Spring 2024 semester at Cornell University
 - `nottingham/`: schedules produced by our algorithms on the University of Nottingham benchmark dataset (see the dataset homepage at [nottingham dataset link](https://people.cs.nott.ac.uk/pszrq/data.htm))
 
 ## Data dictionaries
@@ -28,12 +28,12 @@ Use these data to reproduce or benchmark exam timetabling models, compare object
 Each CSV corresponds to a schedule our algorithms produced for a particular instance/parameterization of the University of Nottingham dataset (e.g., `23a`, `23b`, `26a`, `26b`).
 
 Common columns:
-- **exam**: exam/course identifier
+- **exam**: exam identifier
 - **Exam Block**: block index used by the benchmark instance (often corresponds to a day or session group)
 - **slot**: timeslot index within the instance
 - **size**: number of students registered for the exam
 - **b2bs**: count of back-to-back occurrences involving this exam in the assigned solution
-- **confs**: count of hard conflicts (should be zero in feasible schedules)
+- **confs**: count of simultaneous conflicts
 - **2i3s**: count of “2 exams in 3 slots” occurrences involving this exam
 - **score**: per-exam contribution to the objective value in our runs
 - **score_norm**: normalized version of the score for easier comparison across exams
